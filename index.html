@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Déclaration du type de document HTML -->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Définit le jeu de caractères utilisé -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Rend la page responsive sur mobile -->
+
+    <title>Calculatrice</title>
+    <!-- Titre de la page affiché dans l’onglet du navigateur -->
+
+    <!-- Lien vers la feuille de style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Lien vers le fichier JavaScript, chargé après le HTML grâce à defer -->
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Corps principal de la page -->
+
+    <!-- En-tête de la page (actuellement vide, mais prêt pour du contenu futur) -->
+    <header></header>
+
+    <!-- Contenu principal du site -->
+    <main>
+        <!-- Section qui contient la calculatrice -->
+        <section class="calculator">
+            
+            <!-- Écran de la calculatrice -->
+            <div class="screen">
+                <p class="currentValue" id="display">0</p>
+                <!-- Affichage de la valeur actuelle (par défaut 0) -->
+            </div>
+
+            <!-- Grille de tous les boutons de la calculatrice -->
+            <div class="grid">
+
+                <!-- Première ligne : fonctions -->
+                <button class="button btnPower">⏻</button>
+                <button class="button btnOperator btnPercent">%</button>
+                <button class="button btnOperator btnClear">C</button>
+                <button class="button btnOperator">+</button>
+
+                <!-- Deuxième ligne : 7 8 9 - -->
+                <button class="button btnNumber">7</button>
+                <button class="button btnNumber">8</button>
+                <button class="button btnNumber">9</button>
+                <button class="button btnOperator">-</button>
+
+                <!-- Troisième ligne : 4 5 6 × -->
+                <button class="button btnNumber">4</button>
+                <button class="button btnNumber">5</button>
+                <button class="button btnNumber">6</button>
+                <button class="button btnOperator">×</button>
+
+                <!-- Quatrième ligne : 1 2 3 ÷ -->
+                <button class="button btnNumber">1</button>
+                <button class="button btnNumber">2</button>
+                <button class="button btnNumber">3</button>
+                <button class="button btnOperator">÷</button>
+
+                <!-- Dernière ligne : 0 (large), . et = -->
+                <button class="button zero btnNumber">0</button>
+                <button class="button btnOperator btnDecimal">.</button>
+                <button class="button btnEqual">=</button>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Pied de page (actuellement vide, mais prêt pour du contenu) -->
+    <footer></footer>
+</body>
+</html>

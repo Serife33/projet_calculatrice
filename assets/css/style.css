@@ -1,0 +1,150 @@
+/* Réinitialisation de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style global du body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* fond doux */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* pour éviter que la calculatrice touche les bords en mobile */
+}
+
+/* Conteneur de la calculatrice */
+.calculator {
+  width: 100%;
+  max-width: 400px; /* taille maximale sur grand écran */
+  background-color: #ffffff;
+  border: 2px solid #333;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Écran d'affichage */
+.screen {
+  width: 100%;
+  background-color: #2c3e50; /* fond foncé */
+  border-radius: 12px;
+  padding: 15px;
+  text-align: right;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: auto;
+}
+
+/* Contenu numérique */
+.currentValue {
+  width: 100%;
+  word-wrap: break-word;
+}
+
+/* Grille des boutons */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calculator.off .button:not(.btnPower) {
+  pointer-events: none;       /* Désactive tous les clics sauf On/Off */
+  opacity: 0.4;               /* Rend les boutons visuellement "inactifs" */
+}
+
+.calculator.off .screen {
+  background-color: #000000;  /* Écran noir */
+  color: #444;                /* Texte gris foncé */
+}
+
+/* Bouton générique */
+.button {
+  font-size: 1.5em;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* effet 3D */
+}
+
+/* Effet "appui" */
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Bouton "0" étendu sur 2 colonnes */
+.zero {
+  grid-column: span 2;
+}
+
+.btnPower {
+  background-color: #f3b6b6; 
+  color: #4a0000; 
+}
+
+/* Boutons de chiffres */
+.btnNumber {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+/* Boutons opérateurs */
+.btnOperator {
+  background-color: #d6e4f0;
+  color: #000;
+}
+
+/* Bouton égal (=) */
+.btnEqual {
+  background-color: #d0f0c0;
+  color: #000;
+}
+
+/* Bouton de remise à zéro (C) */
+.btnClear {
+  background-color: #fbe4e4;
+  color: #000;
+}
+
+/* Bouton pourcentage (%) */
+.btnPercent {
+  background-color: #fff5cc;
+  color: #000;
+}
+
+/* Bouton virgule (.) */
+.btnDecimal {
+  background-color: #f0f0f5;
+  color: #000;
+}
+
+/* Responsive : agrandir les touches et ajuster les tailles pour petits écrans */
+/* Tout ce qu’il y a à l’intérieur ne s’appliquera que si l’écran fait 480px de large ou moins. */
+@media (max-width: 480px) {
+  .button {
+    font-size: 1.2em;
+    padding: 12px;
+  }
+
+  .screen {
+    font-size: 1.5em;
+    padding: 10px;
+  }
+}
